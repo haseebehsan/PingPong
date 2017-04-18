@@ -126,6 +126,7 @@ public class DesignClass extends View {
             p2.setARGB(255,0,0,0);
 
             reset();
+
             start();
 
             count--;
@@ -173,9 +174,8 @@ public class DesignClass extends View {
         );
 
 
-
-        factorX *= accelerator*right;
-        factorY *= accelerator*down;
+//        Log.e("msg", ""+factorX+" "+factorY+" "+down);
+//
 
 
 
@@ -203,23 +203,32 @@ public class DesignClass extends View {
 
         if(x_pos + radius >= width || x_pos - radius <= 0){
             right *= -1;
+            factorX *= right;
         }
 
         if(y_pos +radius >= height-(height/30) || y_pos-radius <= height/30){
 
+            factorY *= down;
             down *= -1;
-            Stack q = new Stack();
+
+            //Stack q = new Stack();
             factorX *= 1.01;
             factorY *= 1.01;
 
 
             if((x_pos > padding_p1+width/6 || x_pos <padding_p1)  && y_pos < height/2){
-
+                reset();
+                start();
+                factorY *= down;
+                down *= -1;
                 score2++;
 
             }
             else if((x_pos > padding_p2+width/6 || x_pos < padding_p2) && y_pos>height/2 ){
-
+                reset();
+                start();
+                factorY *= down;
+                down *= -1;
                 score1++;
 
             }
@@ -240,9 +249,13 @@ public class DesignClass extends View {
     }
 
     void start(){
-        factorX = 5;//(int)(Math.random()*9) ;
-        factorY = 5;//(int)(Math.random()*9 );
+        factorX = (int)(Math.random()*5) +1 ;
+        factorY = (int)(Math.random()*4 ) +1;
 
+        int num = (int)(Math.random()*4 ) +1;
+        if(num%2 == 0){
+            right *=-1;
+        }
         String msg = ""+factorX+" "+factorY;
         Toast t = Toast.makeText(getContext(),msg , Toast.LENGTH_SHORT);
         t.show();
