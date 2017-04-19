@@ -162,6 +162,9 @@ restart();
 //                    w1,
 //                    p);
 
+        canvas.drawLine(0, height-height/30, width, height-height/30, p2);
+        canvas.drawLine(0, height/30, width, height/30, p2);
+        canvas.drawLine(0, height/2, width, height/2, p2);
         canvas.drawRect(//player one bar
                 padding_p1, 0, padding_p1+width/6, height/30, p2
         );
@@ -184,9 +187,7 @@ restart();
 
         canvas.drawCircle(x_pos,y_pos,radius,p2);
 
-        canvas.drawLine(0, height-height/30, width, height-height/30, p2);
-        canvas.drawLine(0, height/30, width, height/30, p2);
-        canvas.drawLine(0, height/2, width, height/2, p2);
+
 //        if (x_pos>=canvas.getWidth() || x_pos<=5)
 //        {
 //            factorX=-1*factorX;}
