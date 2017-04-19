@@ -53,7 +53,7 @@ public class DesignClass extends View {
 //        if(y< height/4){
 //            reset();
 //        }
-        if(x>0 && x< width/6 && y> height/2 - height/15 && y < height/2 + height/15){
+        if(x>0 && x< width/6 && y> height/2 - height/25 && y < height/2 + height/25){
 restart();
         }
 
@@ -112,7 +112,7 @@ restart();
 
 
 
-        if(count == 1){
+        if(count == 1){//runs only forst time....
             width = canvas.getWidth();
             height = canvas.getHeight();
             p = new Paint();
@@ -170,7 +170,7 @@ restart();
         );
 
         canvas.drawRect(//player two bar
-                0, height/2 - height/15, width/6, height/2+height/15, p2
+                0, height/2 - height/25, width/6, height/2+height/25, p
         );
 
 
