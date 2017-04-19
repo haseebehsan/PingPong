@@ -212,8 +212,8 @@ public class DesignClass extends View {
             down *= -1;
 
             //Stack q = new Stack();
-            factorX *= 1.01;
-            factorY *= 1.01;
+            factorX *= 1.02;
+            factorY *= 1.02;
 
 
             if((x_pos > padding_p1+width/6 || x_pos <padding_p1)  && y_pos < height/2){
