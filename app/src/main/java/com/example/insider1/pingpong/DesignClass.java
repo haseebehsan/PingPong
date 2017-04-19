@@ -220,7 +220,7 @@ public class DesignClass extends View {
                 reset();
                 start();
                 factorY *= down;
-                down *= -1;
+                //down *= -1;
                 score2++;
 
             }
@@ -228,7 +228,7 @@ public class DesignClass extends View {
                 reset();
                 start();
                 factorY *= down;
-                down *= -1;
+                //down *= -1;
                 score1++;
 
             }
