@@ -2,20 +2,12 @@ package com.example.insider1.pingpong;
 
 import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.Color;
 import android.graphics.Paint;
-import android.graphics.RectF;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
-import android.util.Log;
-import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Toast;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Stack;
 
 /**
  * Created by hassan on 4/14/17.
@@ -125,7 +117,7 @@ public class DesignClass extends View {
             p2.setTextSize(48f);
             p2.setARGB(255,0,0,0);
 
-            reset();
+            resetPos();
 
             start();
 
@@ -217,7 +209,7 @@ public class DesignClass extends View {
 
 
             if((x_pos > padding_p1+width/6 || x_pos <padding_p1)  && y_pos < height/2){
-                reset();
+                resetPos();
                 start();
                 factorY *= down;
                 //down *= -1;
@@ -225,7 +217,7 @@ public class DesignClass extends View {
 
             }
             else if((x_pos > padding_p2+width/6 || x_pos < padding_p2) && y_pos>height/2 ){
-                reset();
+                resetPos();
                 start();
                 factorY *= down;
                 //down *= -1;
@@ -242,11 +234,12 @@ public class DesignClass extends View {
 
     }
 
-    void reset(){
+    void resetPos(){
 
         x_pos = width/2;
         y_pos = height/2;
     }
+
 
     void start(){
         factorX = (int)(Math.random()*5) +1 ;
