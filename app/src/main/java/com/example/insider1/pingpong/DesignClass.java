@@ -53,7 +53,11 @@ public class DesignClass extends View {
 //        if(y< height/4){
 //            reset();
 //        }
-        if(x > width/2 && y < height/2){ //p1 right
+        if(x>0 && x< width/6 && y> height/2 - height/15 && y < height/2 + height/15){
+restart();
+        }
+
+        else if(x > width/2 && y < height/2){ //p1 right
             padding_p1 += 30;
             if(padding_p1+width/6 > width){
                 padding_p1 = width-width/6;
@@ -165,6 +169,10 @@ public class DesignClass extends View {
                 padding_p2, height -height/30, padding_p2+width/6, height, p2
         );
 
+        canvas.drawRect(//player two bar
+                0, height/2 - height/15, width/6, height/2+height/15, p2
+        );
+
 
 //        Log.e("msg", ""+factorX+" "+factorY+" "+down);
 //
@@ -242,16 +250,23 @@ public class DesignClass extends View {
 
 
     void start(){
-        factorX = (int)(Math.random()*5) +1 ;
-        factorY = (int)(Math.random()*4 ) +1;
+        factorX = (int)(Math.random()*5) +4;
+        factorY = (int)(Math.random()*5 ) +4;
 
         int num = (int)(Math.random()*4 ) +1;
-        if(num%2 == 0){
+        if(num%2 != 0){
             right *=-1;
         }
-        String msg = ""+factorX+" "+factorY;
-        Toast t = Toast.makeText(getContext(),msg , Toast.LENGTH_SHORT);
-        t.show();
+//        String msg = ""+factorX+" "+factorY +" "+num;
+//        Toast t = Toast.makeText(getContext(),msg , Toast.LENGTH_SHORT);
+//        t.show();
 
+    }
+
+    void restart(){
+        resetPos();
+        start();
+        score1 = 0;
+        score2 = 0;
     }
 }
