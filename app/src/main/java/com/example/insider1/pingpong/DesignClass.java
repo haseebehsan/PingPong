@@ -57,13 +57,13 @@ public class DesignClass extends View {
 restart();
         }
 
-        else if(x > width/2 && y < height/2){ //p1 right
+        else if(x > width/2 && y < height/2 && y_pos < height / 2 ){ //p1 right
             padding_p1 += 30;
             if(padding_p1+width/6 > width){
                 padding_p1 = width-width/6;
             }
         }
-        else if(x < width/2 && y < height/2) {//p1 left
+        else if(x < width/2 && y < height/2 && y_pos < height / 2) {//p1 left
             padding_p1 -= 30;
             if(padding_p1<0){
                 padding_p1 = 0;
@@ -71,11 +71,11 @@ restart();
         }
         else if(x > width/2 && y > height/2){ //p1 right
             padding_p2 += 30;
-            if(padding_p2+width/6 > width){
+            if(padding_p2+width/6 > width && y_pos > height / 2){
                 padding_p2 = width-width/6;
             }
         }
-        else if(x < width/2 && y > height/2) {//p1 left
+        else if(x < width/2 && y > height/2 && y_pos > height / 2) {//p1 left
             padding_p2 -= 30;
             if(padding_p2<0){
                 padding_p2 = 0;
