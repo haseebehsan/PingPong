@@ -19,11 +19,7 @@ public class DesignClass extends View {
 
     float x_pos =100;
     float y_pos = 100;
-    float recx = 0;
-    float x1=0;
-    float y1=0;
-    float h1=0;
-    float w1 =0;
+
 
     Paint p, p2;
     int count = 1;
