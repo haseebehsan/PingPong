@@ -33,10 +33,7 @@ public class DesignClass extends View {
     float right = 1, down = 1, accelerator = 1;
 
     public DesignClass(Context context, @Nullable AttributeSet attrs) {
-
         super(context, attrs);
-
-
     }
 
 
