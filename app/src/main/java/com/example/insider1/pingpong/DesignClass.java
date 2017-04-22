@@ -69,7 +69,7 @@ restart();
                 padding_p1 = 0;
             }
         }
-        else if(x > width/2 && y > height/2 && y_pos > height / 2{ //p1 right
+        else if(x > width/2 && y > height/2 && y_pos > height / 2 ) {//p1 right
             padding_p2 += 30;
             if(padding_p2+width/6 > width ){
                 padding_p2 = width-width/6;
