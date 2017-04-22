@@ -120,7 +120,7 @@ restart();
             p2 = new Paint();
             p2.setTextSize(48f);
             p2.setARGB(255,0,0,0);
-
+            
             resetPos();
 
             start();
