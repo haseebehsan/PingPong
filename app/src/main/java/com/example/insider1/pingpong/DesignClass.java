@@ -27,6 +27,7 @@ public class DesignClass extends View {
 
     Paint p, p2;
     int count = 1;
+    double unit;
     int radius = 40;
     int padding_p1 = 0;
     int padding_p2 = 0;
@@ -120,7 +121,13 @@ restart();
             p2 = new Paint();
             p2.setTextSize(48f);
             p2.setARGB(255,0,0,0);
+            unit = ((double)height)/1000.0;
             radius = height/50;//will set it self up for smaller devices...
+
+            String msg = ""+unit+" "+height;
+            Toast t = Toast.makeText(getContext(),msg , Toast.LENGTH_SHORT);
+            t.show();
+
             resetPos();
 
             start();
@@ -253,12 +260,15 @@ restart();
     void start(){
         factorX = (int)(Math.random()*5) +4;
         factorY = (int)(Math.random()*5 ) +4;
+//
+        factorX *= unit;
+        factorY *= unit;
 
         int num = (int)(Math.random()*4 ) +1;
         if(num%2 != 0){
             right *=-1;
         }
-//        String msg = ""+factorX+" "+factorY +" "+num;
+//        String msg = ""+unit+" "+height;
 //        Toast t = Toast.makeText(getContext(),msg , Toast.LENGTH_SHORT);
 //        t.show();
 
